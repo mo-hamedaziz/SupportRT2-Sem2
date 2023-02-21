@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random color change</title>
+
+    <style>
+        li{
+            margin: 20px 0px 20px 0px;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        li:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ol id="cnt">
+
+    </ol>
+
+    <script>
+        let cnt=document.getElementById("cnt");
+        
+        for(let i=0;i<5;i++)
+        {
+            var new_node=document.createElement("li");
+            new_node.innerHTML="Line "+(i+1);
+            new_node.onclick=function(){changeColor(this);}
+            cnt.appendChild(new_node);
+        }
+
+        function changeColor(e)
+        {
+            let randColor = () =>  {
+                return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
+            }
+            e.style.color=randColor();
+        }
+    </script>
+</body>
+</html>

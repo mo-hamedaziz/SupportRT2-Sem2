@@ -7,110 +7,7 @@
     <title>TODO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <style>
-        body{
-            background-color:cadetblue;
-        }
-        h1{
-            text-align: center;
-            text-decoration: underline;
-            margin-top: 30px;
-            font-weight: bold;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        }
-
-        .mb-3{
-            padding: 0px 20px 0px 20px;
-            position: relative;
-            
-            
-        }
-
-        .form-control{
-            min-height: 50px;
-            
-        }
-
-        label{
-            font-size: 20px;
-            font-weight: bold;
-            padding-left: 10px;
-        }
-
-        #list{
-            background-color: white;
-            min-height: 500px;
-            height: fit-content;
-            padding: 10px 10px 10px 10px;
-            margin-left: 50px;
-            margin-right: 50px;
-            border-radius: 10px;
-            
-        }
-
-        .btn{
-            margin-left: 20px;
-            min-height:50px;
-            margin-top: 20px;
-            background-color: green;
-            border:none;
-            font-weight: bold;
-            padding: 0px 10px 0px 10px;
-            opacity: 100%;
-
-        }
-
-        .btn:hover{
-            background-color: green;
-        }
-        .btn:active{
-            background-color: green !important;
-        }
-
-        .btn:disabled{
-            background-color: green !important;
-            opacity: 50%;
-        }
-
-        .note{
-            position: relative;
-            background-color: whitesmoke;
-            border: none;
-            border-radius: 20px;
-            min-height: 50px;
-            padding: 15px 10px 5px 10px;
-            margin: 10px 10px 20px 10px;
-            box-shadow: 1px 2px 20px   black;
-            overflow: hidden;
-            
-            
-        }
-
-        .note:hover{
-            
-            background-color: white;
-            width: 95%;
-            box-shadow: 2px 2px 20px  blue;
-            
-        }
-
-        .delete
-        {
-            color: red;
-            position: relative;
-            float: right;
-            margin-right: 20px;
-            padding: 5px;
-        }
-        .delete:hover
-        {
-            background-color: #E2DDDC;
-            
-            border-radius: 50%;
-            cursor:pointer;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles/task3.css">
 </head>
 <body>
     
@@ -120,9 +17,13 @@
     <div class="row">
         <div class="col" id="list">
             <!--<div class="note">
-                <p>
-                    Some Note  <span class="material-symbols-outlined " onclick="delete_note()" id="delete">delete</span>
+                <p class="note-head">
+                    Note title  <span class="material-symbols-outlined delete" onclick="delete_note()" >delete</span>
                 </p>
+                <p class="note-body">
+                    Note content balalalabalalalabalalalabalalala
+                </p>
+                
             </div>-->
             
         </div>
@@ -139,54 +40,6 @@
         </div>
 
     </div>
-    <script>
-        let note_name=document.getElementById("note-name");
-        let note_content=document.getElementById("note-content");
-        let add_btn=document.getElementById("add-btn");
-        let note_list=document.getElementById("list");
-
-        function empty_field()
-        {
-            if (note_name.value==="" || note_content.value==="")
-            {
-                add_btn.disabled=true;
-            }
-            else
-            {
-                add_btn.disabled=false;
-            }
-        }
-
-        function plusNote()
-        {
-            var new_note=document.createElement("div");
-            var new_note_el=document.createElement("p");
-            var del_btn=document.createElement("span");
-            new_note.className="note";
-            new_note_el.innerHTML=`${note_name.value} : ${note_content.value}`;
-            del_btn.className="material-symbols-outlined delete";
-            //del_btn.id="delete";
-            del_btn.innerHTML="delete";
-            del_btn.onclick=function(){delete_note(del_btn)};
-            new_note.appendChild(new_note_el);
-            new_note_el.appendChild(del_btn);
-            note_list.appendChild(new_note);
-            
-        }
-
-        
-        function delete_note(e)
-        {
-            e.parentElement.parentElement.remove();
-        }
-
-        
-        
-
-
-        
-
-
-    </script>
+    <script src="js/task3.js"></script>
 </body>
 </html>

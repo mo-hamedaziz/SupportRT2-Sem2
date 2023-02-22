@@ -1,0 +1,46 @@
+div{
+    border: none;
+    border-radius: 40px;
+    min-height: 500px;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+
+    background-color: white;
+}
+
+body{
+    background: linear-gradient(90deg, rgba(58,203,143,1) 30%, rgba(42,203,241,1) 100%);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    position: relative;
+    padding-top: 50px;
+}
+
+input {
+    position: relative;
+    background-color: limegreen;
+    color: white;
+    border:none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+
+    margin-top: 40px;
+}
+
+input:hover{
+    background-color: chartreuse;
+}
+
+#result {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: yellow;
+    padding: 30px;
+    font-size: 50px;
+    color: white;
+}
